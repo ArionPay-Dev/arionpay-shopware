@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="ArionPay\Shopware\Service\ArionPayService">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="order_transaction.repository"/>
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <argument type="service" id="logger"/>
+        </service>
+        <service id="ArionPay\Shopware\Handler\ArionPayHandler">
+            <argument type="service" id="ArionPay\Shopware\Service\ArionPayService"/>
+            <argument type="service" id="Shopware\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
+            <tag name="shopware.payment.method"/>
+        </service>
+        <service id="ArionPay\Shopware\Controller\WebhookController" public="true">
+            <argument type="service" id="ArionPay\Shopware\Service\ArionPayService"/>
+            <call method="setContainer"><argument type="service" id="service_container"/></call>
+        </service>
+    </services>
+</container>

@@ -1,0 +1,24 @@
+{
+    "name": "arionpay/shopware-payment",
+    "description": "ArionPay crypto payments for Shopware 6.7: Bitcoin, USDT, Litecoin, Ethereum, TRON and more, paid straight to your own wallet.",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [{ "name": "ArionPay", "homepage": "https://arionpay.com" }],
+    "require": {
+        "shopware/core": "~6.7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ArionPay\\Shopware\\": "src/",
+            "ArionPay\\": "lib/arionpay-php/src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "ArionPay\\Shopware\\ArionPayPayment",
+        "label": { "en-GB": "ArionPay crypto payments", "de-DE": "ArionPay Krypto-Zahlungen" },
+        "description": { "en-GB": "Bitcoin, USDT, Litecoin, Ethereum, TRON and more, paid straight to your own wallet.", "de-DE": "Bitcoin, USDT, Litecoin, Ethereum, TRON und mehr, direkt in Ihre eigene Wallet." },
+        "manufacturerLink": { "en-GB": "https://arionpay.com", "de-DE": "https://arionpay.com" },
+        "supportLink": { "en-GB": "https://arionpay.com", "de-DE": "https://arionpay.com" }
+    }
+}

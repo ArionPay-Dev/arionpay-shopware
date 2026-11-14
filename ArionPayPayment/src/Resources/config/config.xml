@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>ArionPay</title>
+        <title lang="de-DE">ArionPay</title>
+        <input-field>
+            <name>apiKey</name>
+            <label>API key</label>
+            <helpText>ArionPay dashboard > your store > API key (starts with pk_).</helpText>
+        </input-field>
+        <input-field type="password">
+            <name>apiSecret</name>
+            <label>API secret</label>
+            <helpText>ArionPay dashboard > your store > API secret (starts with sk_).</helpText>
+        </input-field>
+        <input-field type="password">
+            <name>webhookSecret</name>
+            <label>Webhook signing secret</label>
+            <helpText>ArionPay dashboard > Webhooks > signing secret (starts with whsec_). Nothing to paste into ArionPay: every invoice tells ArionPay where to send its updates.</helpText>
+        </input-field>
+        <input-field type="bool">
+            <name>testMode</name>
+            <label>Test mode</label>
+            <defaultValue>true</defaultValue>
+            <helpText>Test invoices: no real money moves. Turn it off before you take real payments.</helpText>
+        </input-field>
+        <input-field>
+            <name>baseUrl</name>
+            <label>ArionPay address</label>
+            <placeholder>https://merchant.arionpay.com</placeholder>
+            <helpText>Leave empty unless ArionPay tells you otherwise.</helpText>
+        </input-field>
+    </card>
+</config>
